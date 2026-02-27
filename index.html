@@ -2,245 +2,127 @@
 <html lang="en">
 <head>
   <meta charset="UTF-8" />
-  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
-  <title>Bounty-Hive — Controlled Custody for Weaponized PoCs</title>
+  <title>Bounty-Hive Pilot Intake</title>
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
 
   <style>
     body {
       background-color: #0f1115;
       color: #e5e7eb;
-      font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, Inter, sans-serif;
+      font-family: system-ui, -apple-system, BlinkMacSystemFont, sans-serif;
       margin: 0;
       padding: 0;
       line-height: 1.6;
     }
-
     .container {
-      max-width: 980px;
-      margin: 0 auto;
+      max-width: 820px;
+      margin: auto;
       padding: 64px 24px;
     }
-
-    h1, h2, h3 {
+    h1, h2 {
       color: #f2c94c;
-      margin-top: 0;
-      line-height: 1.25;
     }
-
-    h1 {
-      font-size: 2.6rem;
-      margin-bottom: 16px;
+    label {
+      display: block;
+      margin-top: 18px;
+      font-weight: 600;
     }
-
-    h2 {
-      font-size: 1.8rem;
-      margin-top: 48px;
-      margin-bottom: 12px;
+    input, select, textarea {
+      width: 100%;
+      padding: 10px;
+      margin-top: 6px;
+      background: #141821;
+      color: #fff;
+      border: 1px solid #1f2430;
+      border-radius: 6px;
     }
-
-    p {
-      font-size: 1.05rem;
-      color: #e5e7eb;
-      margin-bottom: 18px;
-      max-width: 820px;
+    fieldset {
+      margin-top: 32px;
+      border: 1px solid #1f2430;
+      border-radius: 10px;
+      padding: 20px;
     }
-
-    .subtle {
-      color: #9ca3af;
-      font-size: 0.95rem;
-    }
-
-    a {
+    legend {
+      padding: 0 8px;
       color: #f2c94c;
-      text-decoration: none;
-      font-weight: 500;
+      font-weight: 700;
     }
-
-    a:hover {
-      text-decoration: underline;
-    }
-
-    .hero {
-      margin-bottom: 56px;
-    }
-
-    .tagline {
-      font-size: 1.25rem;
-      color: #d1d5db;
-      margin-bottom: 28px;
-      max-width: 860px;
-    }
-
-    .button-primary {
-      background-color: #f2c94c;
+    button {
+      margin-top: 32px;
+      background: #f2c94c;
       color: #0f1115;
       padding: 14px 22px;
+      border: none;
       border-radius: 8px;
       font-weight: 700;
-      display: inline-block;
-      margin-right: 14px;
-      margin-top: 8px;
+      cursor: pointer;
     }
-
-    .button-secondary {
-      border: 1px solid #f2c94c;
-      color: #f2c94c;
-      padding: 13px 22px;
-      border-radius: 8px;
-      font-weight: 600;
-      display: inline-block;
-      margin-top: 8px;
-    }
-
-    .section {
-      margin-top: 56px;
-    }
-
-    .card {
-      background-color: #141821;
-      border: 1px solid #1f2430;
-      border-radius: 12px;
-      padding: 28px 26px;
-      margin-top: 22px;
-    }
-
-    .footer {
-      margin-top: 96px;
-      padding-top: 32px;
-      border-top: 1px solid #1f2430;
+    small {
       color: #9ca3af;
-      font-size: 0.9rem;
     }
   </style>
 </head>
 <body>
 
-  <div class="container">
+<div class="container">
 
-    <!-- HERO -->
-    <div class="hero">
-      <h1>Bounty-Hive</h1>
+<h1>Bounty-Hive Pilot Intake</h1>
 
-      <div class="tagline">
-        Controlled custody and enterprise-safe handling of weaponized vulnerability proof-of-concept artifacts.
-      </div>
+<p>
+This form initiates a <strong>non-invasive, read-only pilot</strong>.
+No exploitation, scanning, or system modification occurs.
+</p>
 
-      <p>
-        Bounty-Hive is a security governance layer for modern vulnerability disclosure workflows.
-        It prevents unsafe possession, uncontrolled transfer, and accidental leakage of weaponized exploit PoCs
-        by enforcing custody, approval, auditability, and company-only delivery.
-      </p>
+<form action="https://formspree.io/f/mbdovlpj" method="POST">
 
-      <a href="/pilot-intake/" class="button-primary"> 
-        Request Pilot Access
+<fieldset>
+  <legend>Contact</legend>
 
-      </a>
+  <label>Full Name
+    <input name="name" required>
+  </label>
 
-      <a href="#how-it-works" class="button-secondary">
-        How It Works
-      </a>
-    </div>
+  <label>Work Email
+    <input type="email" name="email" required>
+  </label>
 
-    <!-- PROBLEM -->
-    <div class="section">
-      <h2>The Problem With PoC Handling Today</h2>
+  <label>Company
+    <input name="company" required>
+  </label>
 
-      <div class="card">
-        <p>
-          In most bug bounty and vulnerability disclosure programs today, weaponized proof-of-concept exploits are:
-        </p>
+  <label>Role
+    <input name="role">
+  </label>
+</fieldset>
 
-        <ul class="subtle">
-          <li>Possessed directly by researchers</li>
-          <li>Transferred to companies without strong custody controls</li>
-          <li>Stored in ticketing systems or file shares with weak access guarantees</li>
-          <li>Handled without cryptographic audit trails or consent enforcement</li>
-        </ul>
+<fieldset>
+  <legend>Environment</legend>
 
-        <p>
-          This creates legal exposure, insider risk, accidental leakage risk,
-          and regulatory liability for both platforms and enterprise recipients.
-        </p>
-      </div>
-    </div>
+  <label>Primary OS
+    <select name="os">
+      <option>Linux</option>
+      <option>macOS</option>
+      <option>Windows</option>
+      <option>Mixed / Unsure</option>
+    </select>
+  </label>
 
-    <!-- SOLUTION -->
-    <div class="section">
-      <h2>What Bounty-Hive Changes</h2>
+  <label>Runtime Availability
+    <select name="runtime">
+      <option>1 Week</option>
+      <option>2 Weeks</option>
+      <option>1 Month</option>
+      <option>2 Months</option>
+    </select>
+  </label>
 
-      <div class="card">
-        <p>
-          Bounty-Hive introduces a custody-first architecture for weaponized vulnerability artifacts.
-        </p>
+</fieldset>
 
-        <ul class="subtle">
-          <li>Researchers never retain final exploit payload possession</li>
-          <li>All PoCs are sealed, hashed, and stored under platform-controlled custody</li>
-          <li>Outbound delivery is company-only and approval-gated</li>
-          <li>Every disclosure is bound to cryptographic audit evidence</li>
-          <li>Mitigation artifacts are mandatory alongside exploit artifacts</li>
-        </ul>
+<button type="submit">Submit Pilot Request</button>
 
-        <p>
-          This transforms PoC handling from an informal trust process into a governed, auditable, enterprise-safe pipeline.
-        </p>
-      </div>
-    </div>
+</form>
 
-    <!-- HOW IT WORKS -->
-    <div class="section" id="how-it-works">
-      <h2>How It Works</h2>
-
-      <div class="card">
-        <p>
-          Bounty-Hive operates as a neutral custody and approval engine that integrates into
-          existing bug bounty or VDP workflows.
-        </p>
-
-        <ol class="subtle">
-          <li>Researchers submit PoCs into a sealed custody environment</li>
-          <li>Artifacts are normalized, hashed, and audit-logged</li>
-          <li>Disclosure requests require platform and company approval</li>
-          <li>Outbound delivery is cryptographically bound and company-only</li>
-          <li>Finalization enforces non-retention and non-leakage invariants</li>
-        </ol>
-      </div>
-    </div>
-
-    <!-- PILOT CTA -->
-    <div class="section">
-      <h2>Pilot Program</h2>
-
-      <div class="card">
-        <p>
-          Bounty-Hive is currently onboarding a limited number of pilot partners
-          across bug bounty platforms and enterprise security teams.
-        </p>
-
-        <p>
-          Pilot partners receive:
-        </p>
-
-        <ul class="subtle">
-          <li>Early access to the custody and audit engine</li>
-          <li>Integration guidance and workflow design support</li>
-          <li>Input into governance and approval policy models</li>
-          <li>Preferential commercial terms post-pilot</li>
-        </ul>
-
-        <a href="/pilot-intake/" class="button-primary">
-          Request Pilot Access
-        </a>
-      </div>
-    </div>
-
-    <!-- FOOTER -->
-    <div class="footer">
-      © 2026 Bounty-Hive. All rights reserved.<br/>
-      Controlled custody for weaponized vulnerability artifacts.
-    </div>
-
-  </div>
+</div>
 
 </body>
 </html>
