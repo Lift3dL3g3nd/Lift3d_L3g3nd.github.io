@@ -22,56 +22,99 @@
 <h1>Bounty-Hive</h1>
 
 <p>
-Governance infrastructure for security and AI-generated artifacts.
+Governance and custody infrastructure for security artifacts, automated research outputs,
+and AI-generated artifacts.
 </p>
 
 <hr style="border: 1px solid #ffd000;">
 
 <h2>The Problem</h2>
 <p>
-Modern security and automation workflows no longer operate within a single system.
-Artifacts produced by security tools, AI systems, CI/CD pipelines, and automation workflows
-move across repositories, ticketing systems, deployment pipelines, and execution environments.
+Modern security research, AI systems, and automated workflows generate sensitive artifacts
+including vulnerability reproductions, proof-of-concept exploits, remediation scripts,
+machine-generated reports, and operational outputs. These artifacts frequently move across
+repositories, organizations, pipelines, and execution environments.
 </p>
 
 <p>
-Most security controls focus on identity, access, and execution inside systems,
-but very few systems control what happens to artifacts after they are created.
-As artifacts move between systems, policy context, authority, and approval state are often lost,
-resulting in inherited trust instead of verified admissibility.
+Existing security and governance systems focus primarily on identity authentication,
+execution authorization, and audit logging. However, once artifacts leave the system that
+generated them, the authority context, approval state, and governance conditions under which
+they were created are often lost.
 </p>
 
-<h2>The Bounty-Hive Approach</h2>
 <p>
-Bounty-Hive applies governance directly to artifacts by binding policy state,
-lifecycle state, and audit evidence to artifacts and enforcing admissibility checks
-before artifacts are accepted into repositories, pipelines, or execution environments.
+This creates risks including uncontrolled propagation of sensitive artifacts, inability to verify
+artifact provenance and approval conditions, lifecycle rollback or approval reuse after context
+changes, and reliance on inherited trust instead of verifiable admissibility.
 </p>
 
-<h2>Core Capabilities</h2>
+<h2>Bounty-Hive System Overview</h2>
+<p>
+Bounty-Hive is designed as a governance infrastructure for sensitive digital artifacts.
+The system enforces identity-bound custody, lifecycle-controlled governance,
+certificate-based artifact trust verification, and controlled disclosure workflows.
+</p>
+
+<h2>Core Governance Mechanisms</h2>
 <ul>
-<li>Policy enforcement on artifacts</li>
-<li>Artifact lifecycle state enforcement</li>
-<li>Audit logging and tamper-evident audit chains</li>
-<li>Receipt and artifact evidence generation</li>
-<li>Admission / rejection enforcement</li>
-<li>CI/CD pipeline integration</li>
-<li>Artifact verification and admissibility checks</li>
+<li>Identity-bound artifact custody and governance</li>
+<li>Policy-controlled access and disclosure rules</li>
+<li>Lifecycle-gated state transitions and approval workflows</li>
+<li>Drift detection and approval invalidation upon context change</li>
+<li>Monotonic lifecycle progression enforcement</li>
+<li>Immutable audit chains and governance receipts</li>
+<li>Certificate-based artifact trust verification</li>
+<li>Artifact trust chains and certificate revocation</li>
+<li>Controlled disclosure and reproduction of sensitive artifacts</li>
+<li>Hash-based verification and custody continuity validation</li>
 </ul>
 
-<h2>Example Workflow</h2>
-<ul>
-<li>Artifact is created by a tool, AI system, or developer</li>
-<li>Policy snapshot is applied to the artifact</li>
-<li>Lifecycle rules are enforced</li>
-<li>Receipt and audit record are generated</li>
-<li>Artifact is admitted or rejected based on policy</li>
-<li>Downstream systems can verify artifact admissibility</li>
-</ul>
+<h2>Artifact Trust and Verification Infrastructure</h2>
+<p>
+In certain embodiments, artifacts may be associated with cryptographically signed artifact
+certificates containing artifact identity, artifact hash, generating system identity, authority
+context, policy snapshot, lifecycle state, provenance lineage reference, issuance timestamp,
+and expiration conditions.
+</p>
+
+<p>
+Downstream systems may verify artifact certificates, validate artifact hashes, check lifecycle
+state and policy conditions, and verify revocation status before accepting or executing artifacts.
+</p>
+
+<h2>Lifecycle Constitutional Enforcement</h2>
+<p>
+The system may enforce lifecycle transitions through a runtime constitutional enforcement
+engine that prevents unauthorized lifecycle transitions, lifecycle rollback, approval reuse after
+policy or identity changes, forked lineage acceptance, or export without runtime validation.
+</p>
+
+<p>
+Lifecycle continuity may be enforced using epoch-based lineage structures, snapshot-locked
+authority, semantic fingerprint validation, and fail-closed enforcement semantics.
+</p>
+
+<h2>Identity-Bound Custody and Controlled Disclosure</h2>
+<p>
+Artifacts may be cryptographically bound to verified identities and governed by policy-controlled
+access and disclosure rules. Disclosure workflows may require approval and identity verification
+prior to release of sensitive artifacts. Each lifecycle event may generate audit receipts forming an
+immutable custody chain.
+</p>
+
+<h2>Controlled Verification and Custody of Security Research Outputs</h2>
+<p>
+In certain embodiments, sensitive vulnerability artifacts may be stored in custody and referenced
+externally by cryptographic hash rather than transmitted directly. Approved organizations may
+verify artifacts via hash-based verification or controlled reproduction environments rather than
+direct artifact transfer.
+</p>
 
 <h2>Demo Repository</h2>
 <p>
-This demo shows governance enforcement integrated into a CI/CD pipeline using GitHub Actions.
+A demonstration repository shows governance enforcement integrated into a CI/CD workflow
+using GitHub Actions.
 </p>
 
 <p>
@@ -80,11 +123,12 @@ View GitHub Demo Repository
 </a>
 </p>
 
-<h2>Engineering Focus</h2>
+<h2>Engineering Implementation</h2>
 <p>
-This project involves backend development, automation tooling, CI/CD integration,
-policy engines, audit logging systems, artifact lifecycle management,
-and governance enforcement.
+The Bounty-Hive project includes backend governance engines, policy enforcement systems,
+artifact lifecycle management, audit logging and receipt generation, artifact verification
+mechanisms, and CI/CD integration demonstrating governance enforcement within automated
+workflows.
 </p>
 
 </div>
