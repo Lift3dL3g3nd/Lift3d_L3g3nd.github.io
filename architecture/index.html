@@ -18,21 +18,42 @@
 </nav>
 
 <div class="container">
+
 <h1>Architecture</h1>
 
 <p>
-Bounty-Hive enforces governance on artifacts as they move through automated workflows.
+Bounty-Hive enforces governance on artifacts as they move through automated workflows
+and system boundaries. Instead of trusting artifacts because they were trusted before,
+Bounty-Hive requires artifacts to be evaluated for admissibility under current policy
+and lifecycle state.
 </p>
 
-<h2>System Flow</h2>
+<h2>Governance Flow</h2>
 <ul>
-<li>Artifact Created</li>
-<li>Policy Snapshot Applied</li>
-<li>Lifecycle Enforcement</li>
-<li>Receipt Generated</li>
-<li>Audit Chain Written</li>
-<li>Artifact Admitted or Rejected</li>
-<li>Verifier Can Validate Later</li>
+<li>Artifact Intake</li>
+<li>Policy Snapshot Binding</li>
+<li>Lifecycle State Enforcement</li>
+<li>Receipt Generation</li>
+<li>Audit Chain Logging</li>
+<li>Admission / Rejection Decision</li>
+<li>Artifact Verification</li>
+<li>Revocation Capability</li>
+</ul>
+
+<h2>System Goal</h2>
+<p>
+The goal of Bounty-Hive is to ensure artifacts carry governance context
+and can be evaluated for admissibility at each system boundary rather than
+relying on inherited trust.
+</p>
+
+<h2>Example Lifecycle</h2>
+<ul>
+<li>INTAKE</li>
+<li>REVIEW</li>
+<li>APPROVED</li>
+<li>RELEASED</li>
+<li>REVOKED</li>
 </ul>
 
 </div>
